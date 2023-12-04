@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Signup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}">
+</head>
+<body>
+    <form method="post" action="{{ url_for('register') }}">
+        <div class="container">
+            <div class="left-div">
+                <h1>Sign Up</h1>
+                <input class="ip" type="text" placeholder="Enter Username" id="username" name="username" required><br>
+                <input class="ip" type="email" placeholder="Enter your mail"><br>
+                <input class="ip" type="password" placeholder="Enter new password" id="password" name="password" required><br>
+                <input class="ip" type="password" placeholder="Confirm password" id="confirm" ><br>
+                <input class="bt" type="submit" value="SIGN UP"><br>
+            </div>
+            <div class="centered-div">
+                <p>OR</p>
+            </div>
+            
+            <div class="right-div">
+                <button id="gb">Sign Up with google</button>
+                <button id="fb">Sign Up with facebook</button>
+            </div>
+        </div>
+    </form>
+    <script>
+        var pass=document.getElementById('password').value;
+        var cpass=document.getElementById('confirm').value;
+        if(cpass!=pass){
+            alert('password doesnot match with confirm password');
+            return false;
+        }
+        else{
+            return true;
+        }
+    </script>
+</body>
+</html>
